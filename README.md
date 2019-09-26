@@ -7,8 +7,8 @@
 ## How to create this repo
 
  1. Run **gem install rails -pre** if needed.
- 2. Run **rails _6.0.0.rc2_ new rails_6_new.**
- 3. Run **cd rails_6_new; echo 'rvm use 2.5.6@ruby2.5-rails6.0 --create' > .rvmrc**
+ 2. Run **rails _6.0.0.rc2_ new rails_6_newt.**
+ 3. Run **cd rails_6_newt; echo 'rvm use 2.5.6@ruby2.5-rails6.0 --create' > .rvmrc**
  4. Created repo on Github and fixed .git/config. Run "git pull" to sync.
  5. Add .travis.yml file such as:
 ```
