@@ -36,8 +36,4 @@ end
 #HID:
 #HID:gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'sorbet', :group => :development
-gem 'sorbet-runtime'
-gem 'sorbet-rails'
-gem 'dalli' # Needed by sorbet.
-gem 'redis' # Needed by sorbet.
+gem 'tapioca', require: false, group: :development
