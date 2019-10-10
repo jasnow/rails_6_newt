@@ -169,7 +169,6 @@ class Puma::Launcher
 
   def binder; end
   def close_binder_listeners; end
-  def close_binder_unix_paths; end
   def config; end
   def connected_port; end
   def delete_pidfile; end
@@ -215,7 +214,7 @@ Puma::Launcher::KEYS_NOT_TO_PERSIST_IN_STATE = T.let(T.unsafe(nil), Array)
 
 class Puma::Server
   include(::Puma::Const)
-  extend(::Puma::Delegation)
+  extend(::Forwardable)
 
   def initialize(app, events = _, options = _); end
 
@@ -308,7 +307,7 @@ Puma::Binder::RACK_VERSION = T.let(T.unsafe(nil), Array)
 
 class Puma::Client
   include(::Puma::Const)
-  extend(::Puma::Delegation)
+  extend(::Forwardable)
 
   def initialize(io, env = _); end
 
@@ -398,10 +397,6 @@ class Puma::Cluster::Worker
 end
 
 class Puma::ConnectionError < ::RuntimeError
-end
-
-module Puma::Delegation
-  def forward(what, who); end
 end
 
 class Puma::Events

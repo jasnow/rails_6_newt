@@ -56,6 +56,65 @@ end
 module Loofah::HTML5
 end
 
+module Loofah::HTML5::SafeList
+end
+
+Loofah::HTML5::SafeList::ACCEPTABLE_ATTRIBUTES = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ACCEPTABLE_CSS_FUNCTIONS = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ACCEPTABLE_CSS_KEYWORDS = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ACCEPTABLE_CSS_PROPERTIES = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ACCEPTABLE_ELEMENTS = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ACCEPTABLE_PROTOCOLS = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ACCEPTABLE_SVG_PROPERTIES = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ACCEPTABLE_URI_DATA_MEDIATYPES = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ALLOWED_ATTRIBUTES = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ALLOWED_CSS_FUNCTIONS = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ALLOWED_CSS_KEYWORDS = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ALLOWED_CSS_PROPERTIES = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ALLOWED_ELEMENTS = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ALLOWED_ELEMENTS_WITH_LIBXML2 = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ALLOWED_PROTOCOLS = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ALLOWED_SVG_PROPERTIES = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ALLOWED_URI_DATA_MEDIATYPES = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::ATTR_VAL_IS_URI = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::MATHML_ATTRIBUTES = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::MATHML_ELEMENTS = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::PROTOCOL_SEPARATOR = T.let(T.unsafe(nil), Regexp)
+
+Loofah::HTML5::SafeList::SHORTHAND_CSS_PROPERTIES = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::SVG_ALLOW_LOCAL_HREF = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::SVG_ATTRIBUTES = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::SVG_ATTR_VAL_ALLOWS_REF = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::SVG_ELEMENTS = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::TAGS_SAFE_WITH_LIBXML2 = T.let(T.unsafe(nil), Set)
+
+Loofah::HTML5::SafeList::VOID_ELEMENTS = T.let(T.unsafe(nil), Set)
+
 module Loofah::HTML5::Scrub
   def self.allowed_element?(element_name); end
   def self.force_correct_attribute_escaping!(node); end
@@ -70,64 +129,7 @@ Loofah::HTML5::Scrub::CRASS_SEMICOLON = T.let(T.unsafe(nil), Hash)
 
 Loofah::HTML5::Scrub::CSS_KEYWORDISH = T.let(T.unsafe(nil), Regexp)
 
-module Loofah::HTML5::WhiteList
-end
-
-Loofah::HTML5::WhiteList::ACCEPTABLE_ATTRIBUTES = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ACCEPTABLE_CSS_FUNCTIONS = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ACCEPTABLE_CSS_KEYWORDS = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ACCEPTABLE_CSS_PROPERTIES = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ACCEPTABLE_ELEMENTS = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ACCEPTABLE_PROTOCOLS = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ACCEPTABLE_SVG_PROPERTIES = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ACCEPTABLE_URI_DATA_MEDIATYPES = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ALLOWED_ATTRIBUTES = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ALLOWED_CSS_FUNCTIONS = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ALLOWED_CSS_KEYWORDS = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ALLOWED_CSS_PROPERTIES = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ALLOWED_ELEMENTS = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ALLOWED_ELEMENTS_WITH_LIBXML2 = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ALLOWED_PROTOCOLS = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ALLOWED_SVG_PROPERTIES = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ALLOWED_URI_DATA_MEDIATYPES = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::ATTR_VAL_IS_URI = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::MATHML_ATTRIBUTES = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::MATHML_ELEMENTS = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::PROTOCOL_SEPARATOR = T.let(T.unsafe(nil), Regexp)
-
-Loofah::HTML5::WhiteList::SHORTHAND_CSS_PROPERTIES = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::SVG_ALLOW_LOCAL_HREF = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::SVG_ATTRIBUTES = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::SVG_ATTR_VAL_ALLOWS_REF = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::SVG_ELEMENTS = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::TAGS_SAFE_WITH_LIBXML2 = T.let(T.unsafe(nil), Set)
-
-Loofah::HTML5::WhiteList::VOID_ELEMENTS = T.let(T.unsafe(nil), Set)
+Loofah::HTML5::WhiteList = Loofah::HTML5::SafeList
 
 module Loofah::LibxmlWorkarounds
 end
